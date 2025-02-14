@@ -11,7 +11,7 @@ class EmployeeRemoteDataSourceImpl implements EmployeeRemoteDataSource {
   @override
   Future<List<Employee>> getEmployees() async {
     final response =
-        await http.get(Uri.parse('http://10.0.2.2:3000/employees'));
+        await http.get(Uri.parse('http://localhost:3000/employees'));
 
     if (response.statusCode == 200) {
       List<dynamic> jsonResponse = jsonDecode(utf8.decode(response.bodyBytes));
